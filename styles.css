@@ -1,0 +1,421 @@
+  /* ==============================
+    América Smarttech — CSS unificado
+    (cores, tipografia e componentes)
+    ============================== */
+
+  /* Tokens / Variáveis */
+  :root {
+    --primary:#0E4D7A;
+    --primary-600:#0B3E62;
+    --accent:#1BB3A7;
+    --accent-600:#159687;
+    --ink:#0B2C4A;
+    --muted:#4E6B84;
+    --card:#FFFFFF;
+    --bg:#F7FBFF;
+    --ring:rgba(27,179,167,.35);
+    --shadow:0 8px 24px rgba(14,77,122,.12);
+    --radius:18px;
+    --max:1600px;
+
+    /* Altura estimada do header fixo — ajuste se necessário */
+    --header-height: 10px;
+  }
+
+  ::selection {
+    background: #20c997;
+    color: #071E32;
+  }
+
+  /* Opcional: para navegadores muito antigos que ainda precisam do prefixo */
+  ::-moz-selection {
+    background: #20c997;
+    color: #071E32;
+  }
+
+  /* Base */
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family: Nunito, Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;
+    color:var(--ink);
+    min-width:100vw; width:100vw; overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .container{max-width:var(--max);margin-inline:auto;padding-inline:24px;width:100%}
+  .full-width{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;padding-left:0;padding-right:0}
+
+  /* Seções genéricas */
+  section{padding:40px 0}
+  section h2{font-size:36px;line-height:1.15;margin:0 0 14px}
+  .section-lead{color:var(--muted);max-width:760px}
+  .section-lead-escuro{color:#fafafa;max-width:760px}
+
+  /* Grids e cartões */
+  .grid{display:grid;gap:22px}
+  .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card{background:var(--card);border:1px solid rgba(14,77,122,.08);border-radius:var(--radius)}
+  .card-escuro{background:#d4ffff;border:1px solid rgba(14,77,122,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+  .icon{width:28px;height:28px;margin-bottom:10px;color:var(--accent)}
+
+  /* Chips/badges utilitários (caso necessários fora da Hero) */
+  .badges{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap}
+  .badge{background:#fff;border:1px solid rgba(14,77,122,.12);border-radius:999px;padding:8px 12px;font-weight:600;color:var(--primary-600)}
+  .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#1bb3a7;font-weight:600;color:var(--primary-600)}
+  .center{text-align:center}
+
+  /* Depoimentos */
+  .testimonials{display:grid;grid-auto-flow:column;grid-auto-columns:calc(50% - 12px);gap:24px;overflow:auto;padding-bottom:6px}
+  .quote{font-size:16px;color:var(--ink)}
+  .person{margin-top:10px;color:var(--muted);font-weight:600}
+
+  /* Contato */
+  form{display:grid;gap:12px;max-width:640px}
+  label{font-weight:600;color:var(--primary-600)}
+  input, textarea{padding:12px 14px;border:1.5px solid rgba(14,77,122,.2);border-radius:12px;font:inherit}
+  input:focus, textarea:focus{outline:3px solid var(--ring);border-color:var(--accent)}
+  .contact-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+  .contact-card{background:#fff;border:1px solid rgba(14,77,122,.12);border-radius:var(--radius);padding:18px}
+
+  /* Footer (caso use seu bloco de footer em vez do do tema) */
+  footer{background:linear-gradient(180deg,#EFF7FB,#E6F9F6);border-top:1px solid rgba(14,77,122,.08);padding:0px 0}
+  .foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:20px}
+  .foot h4{margin:0 0 10px;color:var(--primary-600)}
+  .foot a{color:var(--ink)}
+  .copyright{margin-top:24px;color:var(--muted);font-size:14px}
+
+  /* Barrinha gradiente */
+  .barra-smarttech{
+    width:100%;
+    height:5px;
+    background:linear-gradient(315deg,#0B3E62 0%,#0E4D7A 20%,#1BB3A7 60%,#24D0BE 80%,#A0F1E4 100%);
+    border-radius:8px;
+    margin:0;
+    box-shadow:0 2px 12px rgba(0,0,0,.1);
+  }
+
+  /* ===================
+    HERO (as-hero)
+    =================== */
+  .as-hero{padding-top:0px; padding-left: 20px; padding-right: 20px; padding-bottom: 0;background:radial-gradient(1200px 600px at 85% -10%, rgba(27,179,167,.12), transparent)}
+  .as-hero__container{max-width:var(--max); margin-top: -2rem; margin-inline:auto;padding-inline:24px;;
+  }
+  .as-hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center; padding-left: 20px; padding-right: 20px;}
+  .as-hero__eyebrow{display:inline-flex;align-items:center;gap:10px;margin-top:12px;padding:8px 12px;border-radius:999px;background:rgba(27,179,167,.12);color:#159687;font-weight:700;font-size:14px;line-height:1}
+  .as-hero__title{margin: 16px 0 12px;font:800 clamp(28px,3.8vw + 8px,44px)/1.08 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:-.3px;color:var(--ink)}
+  .as-hero__title .as-primary{color:var(--primary)}
+  .as-hero__title .as-accent{color:var(--accent)}
+  .as-hero__lead{ margin: 15px 0; font-size:18px;color:var(--muted);max-width:720px}
+  .as-hero__badges{display:flex;gap:14px;margin-top:22px;flex-wrap:wrap}
+  .as-hero__badge{background:#e1fffe;border:1px solid rgba(14, 77, 122, 0.2);border-radius:999px;padding:8px 12px;font-weight:600;color:#0B3E62}
+  .as-hero__actions{display:flex;gap:16px;margin-top:28px;flex-wrap:wrap}
+  .as-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:999px;font-weight:700;text-decoration:none;box-shadow:var(--shadow);}
+  .as-btn--primary{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff}
+  .as-btn--outline{background:transparent;color:var(--primary);border:2px solid var(--primary);box-shadow:none}
+  .as-hero__art{position:relative}
+  .as-hero__blob{position:absolute;inset:auto -40px -40px auto;width:220px;height:220px;background:radial-gradient(closest-side, rgba(27,179,167,.25), transparent);border-radius:50%}
+  .as-gear{animation:as-spin 16s linear infinite;transform-origin:center}
+  .as-gear--sm{animation-duration:12s}
+  .as-float{animation:as-float 6s ease-in-out infinite}
+  @keyframes as-spin{to{transform:rotate(360deg)}}
+  @keyframes as-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  /* =================== Specific hero adjustments to avoid header overlap =================== */
+  /* Aumenta o espaçamento superior do hero para não ser coberto pelo header fixo */
+  #hero {
+    /* mantém o background já definido e acrescenta padding superior extra */
+    background: #254450;
+    background: radial-gradient(1200px 600px at 85% -10%, rgba(27,179,167,.35), transparent);
+    padding-top: calc(-84px + var(--header-height)); /* 84px = padding padrão de section + altura do header */
+    /* garante que âncoras rolem para posição visível abaixo do header */
+    scroll-margin-top: calc(var(--header-height) + 16px);
+  }
+
+  /* Se preferir um ajuste mais sutil para o container interno do hero */
+  .as-hero__container {
+    padding-top: calc(var(--header-height) / 2); /* pequeno deslocamento interno adicional (opcional) */
+  }
+
+  /* Responsivo */
+  @media (max-width:980px){
+    .grid.cols-3{grid-template-columns:1fr 1fr}
+    .contact-grid{grid-template-columns:1fr}
+    .testimonials{grid-auto-columns:85%}
+    .foot{grid-template-columns:1fr 1fr}
+    .as-hero__grid{grid-template-columns:1fr}
+  }
+  @media (max-width:760px) {
+    .grid.cols-3 {grid-template-columns:1fr}
+  }
+  /* ===================
+    Seções específicas
+    =================== */
+  #hero {
+  background: #204757; background:radial-gradient(1200px 600px at 85% -10%, rgba(27,179,167,.35), transparent)
+  }
+
+  #sobre {
+  background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  #missao {
+  background-color: rgba(7, 30, 50, 0.5);
+  }
+
+  .h2-escuro {
+    color: #FFFFFF;
+  }
+
+  #sistema {
+  background: #a9e7ff; background:radial-gradient(1200px 600px at 85% -10%, #156a80, transparent)
+  }
+
+  .as-hero{background: #223841; padding:12px 0;background:radial-gradient(1200px 600px at 85% -10%, rgba(27,179,167,.12), transparent)
+  }
+
+  #depoimentos {
+  background: #0B3E62;  
+  }
+
+  .texto-ampo {
+  color:var(--muted);max-width:1340px;
+
+
+  }
+
+  /* Largura da barra */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Trilha (fundo) */
+  ::-webkit-scrollbar-track {
+    background: #a8a8a8;
+  }
+
+  /* O "polegar" que se move */
+  ::-webkit-scrollbar-thumb {
+    background: #488485;
+    border-radius: 10px;
+  }
+
+  /* Ao passar o mouse */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1bb3a7;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    cursor: url("https://americasmarttech.com.br/wp-content/uploads/2025/10/cursor-3.png") 0 0, auto;
+  }
+
+  .custom-logo, .wp-block-navigation-item__label, .wp-block-button, .as-btn as-btn--primary, .as-btn as-btn--outline {
+    cursor: url("https://americasmarttech.com.br/wp-content/uploads/2025/10/left-click-5.png") 6 0, pointer;}
+
+  input[type="text"], textarea {
+    cursor: url("https://americasmarttech.com.br/wp-content/uploads/2025/10/type.png") 8 8, text;
+  }
+
+  input[type="email"], textarea {
+    cursor: url("https://americasmarttech.com.br/wp-content/uploads/2025/10/type.png") 8 8, text;
+  }
+
+  input[type="name"], textarea {
+    cursor: url("https://americasmarttech.com.br/wp-content/uploads/2025/10/type.png") 8 8, text;
+  }
+
+  #telefone {
+    cursor: url("https://americasmarttech.com.br/wp-content/uploads/2025/10/type.png") 8 8, text;
+  }
+
+  #nome {
+    cursor: url("https://americasmarttech.com.br/wp-content/uploads/2025/10/type.png") 8 8, text;
+  }
+
+  /* Estado padrão: tudo visível */
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  body.anim-ready [data-animate] {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  body.anim-ready [data-animate].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .resultados {
+      background-color: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
+  }
+
+/* ===== Sticky robusto p/ páginas com header fixo + admin bar ===== */
+
+/* Se já tiver --header-height, mantemos. Só garantimos --wpbar. */
+:root { --wpbar: 0px; }
+
+/* WordPress admin bar (logado): 32px desktop, 46px mobile */
+.admin-bar { --wpbar: 32px; }
+@media (max-width: 782.98px) {
+  .admin-bar { --wpbar: 46px; }
+}
+
+/* Classe utilitária p/ qualquer coluna sticky */
+.sticky-col {
+  position: sticky;
+  top: calc(var(--header-height, 80px) + var(--wpbar, 0px) + 16px); /* margem de respiro */
+  z-index: 2; /* acima de elementos do fluxo à direita */
+}
+
+/* Importantíssimo: o PAI direto do sticky NÃO pode ter overflow/transform/filter */
+.sticky-scope {
+  overflow: visible !important;
+  transform: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  contain: initial !important;  /* caso algum contain tenha sido aplicado */
+}
+
+/* Exemplo de grids comuns (ajuste às suas seções): */
+.st-metrics__container,
+.as-hero__grid,
+.section-grid {
+  overflow: visible;            /* garante o eixo Y livre */
+}
+
+/* Para evitar sombra do overlay afetar o sticky quando o menu abrir */
+.mobile-menu { will-change: transform; } /* (sem impacto no sticky) */
+
+/* ===== SMART STICKY FIX — América Smarttech ===== */
+/* Admin bar/altura do header (se já tiver, mantemos) */
+:root { --header-height: 80px; }
+:root { --wpbar: 0px; }
+.admin-bar { --wpbar: 32px; }
+@media (max-width: 782.98px) {
+  .admin-bar { --wpbar: 46px; }
+}
+
+/* 1) Garante que os containers NÃO quebrem o sticky */
+.st-metrics,
+.st-metrics__container,
+.st-offers,
+.st-offers__container {
+  overflow: visible !important;
+  transform: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  contain: initial !important; /* se algum contain estava ativo */
+}
+
+/* 2) Força o sticky nas colunas da ESQUERDA (desktop) */
+.st-metrics__left,
+.st-offers__left {
+  position: sticky !important;
+  top: calc(var(--header-height, 80px) + var(--wpbar, 0px) + 16px) !important;
+  z-index: 2;
+  align-self: start; /* Safari/grid-friendly */
+}
+
+/* 3) Em mobile, volta ao fluxo normal (se quiser) */
+@media (max-width: 980px) {
+  .st-metrics__left,
+  .st-offers__left {
+    position: static !important; /* ou relative; top não é necessário */
+    top: auto !important;
+  }
+}
+/* ===== SMART STICKY FIX — América Smarttech ===== */
+/* Alturas de referência */
+:root { --header-height: 80px; }
+:root { --wpbar: 0px; }
+.admin-bar { --wpbar: 32px; }
+@media (max-width: 782.98px) {
+  .admin-bar { --wpbar: 46px; }
+}
+
+/* 1) Não deixe os containers matarem o sticky */
+.st-metrics,
+.st-metrics__container,
+#resultados,
+.st-offers,
+.st-offers__container,
+#oferecemos {
+  overflow: visible !important;
+  transform: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  contain: initial !important; /* se algum contain estava ativo */
+}
+
+/* 2) Força sticky na coluna esquerda de cada seção (desktop) */
+.st-metrics__left,
+.st-offers__left {
+  position: sticky !important;
+  top: calc(var(--header-height, 80px) + var(--wpbar, 0px) + 16px) !important;
+  z-index: 2;
+  align-self: start;     /* Safari + CSS Grid */
+  height: max-content;   /* previne “esticar” e perder sticky */
+}
+
+/* 3) Em telas menores, volta ao fluxo normal (se quiser) */
+@media (max-width: 980px) {
+  .st-metrics__left,
+  .st-offers__left {
+    position: static !important;
+    top: auto !important;
+  }
+}
+
+/* 4) Garantias extras típicas de layout em grid */
+.st-metrics__container,
+.st-offers__container {
+  /* assegura que o column wrapper não esteja com height:100% + overflow */
+  align-items: start;
+}
+
+/* 5) Evita que algum “full-bleed” atrapalhe a área de scroll */
+@media (max-width: 1200px) {
+  [style*="width: 100vw"],
+  .full-bleed, .u-bleed {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* === Sticky hardening (containers não podem matar o sticky) === */
+#resultados,
+#resultados .st-metrics__container,
+#oferecemos,
+#oferecemos .st-offers__container {
+  overflow: visible !important;
+  transform: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  contain: initial !important;
+}
+
+/* Força sticky nas colunas esquerdas (desktop) */
+.st-metrics__left,
+.st-offers__left {
+  position: sticky !important;
+  top: calc(var(--header-height, 80px) + var(--wpbar, 0px) + 16px) !important;
+  align-self: start;
+  height: max-content;
+  z-index: 2;
+}
+
+/* Em mobile, volta ao fluxo normal */
+@media (max-width: 980px) {
+  .st-metrics__left,
+  .st-offers__left {
+    position: static !important;
+    top: auto !important;
+  }
+}
